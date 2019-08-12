@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2449e96118561e46bf384d917e9dfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instanceCount: 1000
+  instanceCount: 50000
   instanceMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   instanceMaterial: {fileID: 2100000, guid: 33d4769ad82480a40b0b469cd6eb0a60, type: 2}
   transformationShader: {fileID: 7200000, guid: 5acc7c575dec2cb40b684a26e91edf41,
