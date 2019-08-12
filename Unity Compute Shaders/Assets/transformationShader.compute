@@ -1,0 +1,15 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel Translate
+
+RWStructuredBuffer<float4x4> transformBuffer;
+RWStructuredBuffer<float3> translationBuffer;
+
+float deltaTime;
+
+[numthreads(64,1,1)]
+void Translate (uint3 id : SV_DispatchThreadID)
+{
+	transformBuffer[id.x]._14 += translationBuffer[id.x].x * deltaTime;
+	transformBuffer[id.x]._24 += translationBuffer[id.x].y * deltaTime;
+	transformBuffer[id.x]._34 += translationBuffer[id.x].z * deltaTime;
+}
