@@ -49,3 +49,4 @@ void Translate (uint3 id : SV_DispatchThreadID)
 	transformBuffer[id.x]._34 += translationBuffer[id.x].z * deltaTime;
 }
 ```
+You may have noticed that there is an inconsistancy in the code. In the C# portion, the translation buffer is fed an array of floats, and in the compute shader, the translation buffer is using float3. This is because data that is passed to a buffer is unformatted. If the shader is expecting a buffer of a 4x4 matrix, whether you send it a 4x4 matrix, or 16 floats, the data is read in the same. We will look into some of the uses of this in part 4.
